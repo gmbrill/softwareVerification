@@ -1,4 +1,4 @@
-# software Verification
+# Software Verification
 ✔️ verified
 
 ## Graces Thesis
