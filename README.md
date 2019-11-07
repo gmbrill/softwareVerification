@@ -1,7 +1,7 @@
 # Software Verification
 ✔️ verified
 
-## Graces Thesis
+## Grace's Thesis
 Blah Blah Blah
 
 
