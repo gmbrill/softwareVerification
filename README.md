@@ -11,6 +11,6 @@ Blah Blah Blah
 
 
 ## Contributing
-Grace Brill
+Grace Brill,
 Austin Viveiros,
 Danna Don,
