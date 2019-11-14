@@ -1,0 +1,21 @@
+# from 11-14-2019
+
+-- need finite field: use integers modulo something
+-- implement this: I'll give you integers
+
+-- need probabilities:
+
+-- not sure what to put here, maybe let's not do it for now
+-- 𝒟 : Set → Set
+-- 𝒟 A = ∃ f ⦂ A → ℝ ST ??????
+-- I will give you rand-int
+
+postulate
+  𝒟 : Set → Set
+  rand-int : 𝒟 ℤₚ -- p = 64
+  fact-about-rand-int : ∀ (n : ℤₚ) → Pr[ rand-int ⩦ n ] ≡ 1 / 2^64
+
+gen-random-non-singular-matrix : 𝒟 ℤₚ
+
+-- side condition that the probability sums to one
+
