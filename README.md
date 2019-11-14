@@ -1,7 +1,7 @@
 # Software Verification
 ✔️ verified
 
-## Grace's Thesis
+## Classic McEliece Cryptosystem
 Blah Blah Blah
 
 
