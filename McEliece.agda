@@ -10,7 +10,16 @@ mod-helper k m (S n) (S j) = mod-helper (S k) m n j
 
 _%_ : ℕ → ℕ → ℕ
 Z % n  =  Z
-(S n) % m = mod-helper 0 n m n
+(S m) % n = mod-helper 0 n m n
 
-_ : 4 % 2 ≡ 2
+_ : 4 % 2 ≡ 0
+_ = ↯
+
+_ : 2 % 0 ≡ 0
+_ = ↯
+
+_ : 5 % 4 ≡ 1
+_ = ↯
+
+_ : 6 % 2 ≡ 0
 _ = ↯

@@ -1,0 +1,11 @@
+
+
+CHECK POINT 2 ¯\_﹙ツ﹚_/¯
+
+We started from scratch with the initial goal of implementing modulus as well as starting to
+implement a function to create a random singular matrix. Austin implemented a semi-working modulus
+operator that is inspired by some documentation online. Grace found a way to create a random singular
+matrix in sage/python, then tried to learn Haskell, got frustrated and started implementing a example of
+McEliece.  Danna did research on built-ins and was in change of pizza. Next steps are to fix up mod, and implement
+matrix multiplication. Our fallback plan is to do a single hardcoded example of McEliece instead of generating
+a function for a random singular matrix.
