@@ -12,43 +12,26 @@ _%_ : ℕ → ℕ → ℕ
 n % Z = n
 n % (S m) = mod-helper 0 m n m
 
+zeros : {n : ℕ} → vec[ n ] ℕ
+zeros {Z} = []
+zeros {S n} = Z ∷ zeros {n}
 
 {- addition of vectors -}
-_plus_ : {n : ℕ} → vec[ n ] → vec[ n ] → vec[ n ]
+_plus_ : {n : ℕ} → vec[ n ] ℕ → vec[ n ] ℕ → vec[ n ] ℕ
 [] plus [] = []
 (x ∷ xs) plus (y ∷ ys) = (x + y) ∷ (xs plus ys)
 
 {- multiplication with a scalar -}
-_scalar_ : {n : ℕ} → ℕ → vec[ n ] → vec[ n ]
+_scalar_ : {n : ℕ} → ℕ → vec[ n ] ℕ → vec[ n ] ℕ
 k scalar [] = []
 k scalar (x ∷ xs) = (k × x) ∷ (k scalar xs)
 
 {- multiplication of a vector and a matrix -}
-_v×m_ : {m n : ℕ} → vec[ m ]  → matrix[ m , n ] → vec[ n ]
-[] v×m [] = Z
-(x ∷ xs) v×m (ys ∷ yss) = (x scalar ys) scalar (xs v×m yss)
+_v×m_ : {m n : ℕ} → vec[ m ] ℕ → matrix[ m , n ] ℕ → vec[ n ] ℕ
+[] v×m [] = zeros
+(x ∷ xs) v×m (ys ∷ yss) = (x scalar ys) plus (xs v×m yss)
 
 {- matrix multiplication -}
-_m×m_ : {l m n : ℕ} → matrix[ l , m ] → matrix[ m , n ] → matrix[ l , n ]
+_m×m_ : {l m n : ℕ} → matrix[ l , m ] ℕ → matrix[ m , n ] ℕ → matrix[ l , n ] ℕ
 [] m×m yss = []
-(x ∷ xs) m×m (ys ∷ yss) = (x m×m ys) plus (xs m×m yss)
-
---test cases
-
-A : matrix[ 2 , 3 ] ℕ
-B : matrix[ 3 , 2 ] ℕ 
-
-A = [
-  [ 1 , 2 , 3 ] ,
-  [ 4 , 5 , 6 ]
-]
-
-B = [
-  [ 1 , 2 ] ,
-  [ 3 , 4 ] ,
-  [ 5 , 6 ]
-]
-
-_ : A mxm B ≡ matrix [ 2 , 2 ]
-
-_ = ↯
+(xs ∷ xss) m×m yss = (xs v×m yss) ∷ (xss m×m yss)
