@@ -1,0 +1,11 @@
+Checkpoint 3
+
+Today was a hugeeeee day for the team. In class Danna and Austin worked together throughout the class on proving addition of vectors, multiplication of a vector with a scalar value, multiplication of matrix with a vector and a matrix, and finally matrix multiplication! In the end we needed matrix multiplication to multiply our given matrix by the inverse as a part of our assignment. Grace had a bit of a harder day, but it was still important! Determinants are going to be hard, but she talked to David(you) and got some tips. Next steps are completing determinants, looking more into functions, and combining everything into a final file. Right now all of our file are on the GitHub, but are in individual files. All of the code is on Austin and Grace's computer, but Danna worked with both of them (I promise!) 
+
+Hope to get farther into the rabbit hole with minimal tears.
+
+-Best
+
+Danna,
+Austin,
+And Grace 
