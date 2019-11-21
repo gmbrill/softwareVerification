@@ -33,8 +33,15 @@ P = [ [ 0 , 1 , 0 , 0 , 0 , 0 , 0 ] ,
       [ 0 , 0 , 0 , 0 , 1 , 0 , 0 ]
     ]
 
+slice : ∀ {n : ℕ} → idx (S n) → matrix[ n , S n ] ℕ → matrix[ n , n ] ℕ
+slice i xss = {!!}
 
---determinanats
-det : {n : ℕ} → matrix[ n , n ] ℕ → ℕ
-det [] = Z
-det (x ∷ n) = {!   !}
+mutual
+  det-elem : ∀ {n : ℕ} → idx (S (S n)) → vec[ S (S n) ] ℕ → matrix[ S n , S (S n) ] ℕ → ℕ
+  det-elem i xs xss = xs #[ i ] × (det (slice i xss))
+  
+  -- vec-iter is now called vlfold, part of the state will be a
+  -- boolean, is it plus or minus
+  det : ∀ {n : ℕ} → matrix[ S n , S n ] ℕ → ℕ
+  det {0} [ [ x ] ] = x
+  det {S n} (xs ∷ xss) = {!!}
