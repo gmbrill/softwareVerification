@@ -33,5 +33,22 @@ _m×m_ : {l m n : ℕ} → matrix[ l , m ] → matrix[ m , n ] → matrix[ l , n
 [] m×m yss = []
 (x ∷ xs) m×m (ys ∷ yss) = (x m×m ys) plus (xs m×m yss)
 
--- x + y ∷
--- k × x ∷
+--test cases
+
+A : matrix[ 2 , 3 ] ℕ
+B : matrix[ 3 , 2 ] ℕ 
+
+A = [
+  [ 1 , 2 , 3 ] ,
+  [ 4 , 5 , 6 ]
+]
+
+B = [
+  [ 1 , 2 ] ,
+  [ 3 , 4 ] ,
+  [ 5 , 6 ]
+]
+
+_ : A mxm B ≡ matrix [ 2 , 2 ]
+
+_ = ↯
