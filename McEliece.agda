@@ -21,16 +21,68 @@ _plus_ : {n : ℕ} → vec[ n ] ℕ → vec[ n ] ℕ → vec[ n ] ℕ
 [] plus [] = []
 (x ∷ xs) plus (y ∷ ys) = (x + y) ∷ (xs plus ys)
 
+
+{-proof of additionof vectors  
+_plus_ : {n : ℕ} → vec[ n ]
+v : vec[ 3 ] ℕ
+v = [ 1 , 2 , 3 ]
+
+v1 : vec[ 3 ] ℕ
+v1 = [ 0 , 0 , 0 ]
+
+v2 : vec[ 3 ] ℕ
+v2 = [ 1 , 2 , 3 ]
+
+_ : v plus  v1 ≡ v2
+_ = ↯
+
+-}
+ 
 {- multiplication with a scalar -}
 _scalar_ : {n : ℕ} → ℕ → vec[ n ] ℕ → vec[ n ] ℕ
 k scalar [] = []
 k scalar (x ∷ xs) = (k × x) ∷ (k scalar xs)
+
+
+{-proof of multiplication of  vectors  
+v : vec[ 3 ] ℕ
+v = [ 1 , 2 , 3 ]
+
+v1 : vec[ 3 ] ℕ
+v1 = [ 2 , 4 , 6 ]
+
+
+_ : 2 scalar v  ≡ v1
+_ = ↯
+
+-}
+
+
 
 {- multiplication of a vector and a matrix -}
 _v×m_ : {m n : ℕ} → vec[ m ] ℕ → matrix[ m , n ] ℕ → vec[ n ] ℕ
 [] v×m [] = zeros
 (x ∷ xs) v×m (ys ∷ yss) = (x scalar ys) plus (xs v×m yss)
 
+
+{- multiplication of a vector and a matrix proof
+
+v : vec[ 2 ] ℕ
+v = [ 1 , 1 ]
+
+A : matrix[ 2 , 2 ] ℕ
+A = [ [ 2 , 2 ] ,
+      [ 2 , 2 ] 
+    ]
+
+F : vec[ 2 ] ℕ
+F = [ 4 , 4 ]
+
+
+_ : v v×m A ≡ F
+_ = ↯
+ 
+-}
 {- matrix multiplication -}
 _m×m_ : {l m n : ℕ} → matrix[ l , m ] ℕ → matrix[ m , n ] ℕ → matrix[ l , n ] ℕ
 [] m×m yss = []
