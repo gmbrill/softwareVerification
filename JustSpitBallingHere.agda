@@ -34,7 +34,7 @@ P = [ [ 0 , 1 , 0 , 0 , 0 , 0 , 0 ] ,
     ]
 
 slice : ∀ {n : ℕ} → idx (S n) → matrix[ n , S n ] ℕ → matrix[ n , n ] ℕ
-slice i xss = {!!}
+slice i xss = {!   !}
 
 mutual
   det-elem : ∀ {n : ℕ} → idx (S (S n)) → vec[ S (S n) ] ℕ → matrix[ S n , S (S n) ] ℕ → ℕ
