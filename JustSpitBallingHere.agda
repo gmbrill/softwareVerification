@@ -46,7 +46,7 @@ P = [ [ 0 , 1 , 0 , 0 , 0 , 0 , 0 ] ,
 --   you can do this with map[vec], or define directly
 slice : ∀ {n : ℕ} → idx (S n) → matrix[ S n , S n ] ℕ → matrix[ n , n ] ℕ
 slice Z (x ∷ m) = map[vec] (λ x₁ → {!   !}) {!   !}
-slice (S i) m = map[vec] {!   !} {!   !}
+slice (S i) m = map[vec] (λ x → {!   !}) {!   !}
 
 pred : ∀ (n : ℕ) → idx n → ℕ
 pred Z ()
@@ -65,4 +65,4 @@ mutual
   -- boolean, is it plus or minus
   det : ∀ {n : ℕ} → matrix[ S n , S n ] ℕ → ℕ
   det {0} [ [ x ] ] = x
-  det {S n} (xs ∷ xss) = det {!   !}
+  det {S n} (xs ∷ xss) = det ((n ∷ {!   !}) ∷ {!   !})
