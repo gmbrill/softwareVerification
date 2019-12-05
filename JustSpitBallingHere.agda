@@ -44,8 +44,9 @@ P = [ [ 0 , 1 , 0 , 0 , 0 , 0 , 0 ] ,
 --   rows) (maybe this is already done)
 -- ‣ for all rows after the first, drop the ith element (using remove-idx)
 --   you can do this with map[vec], or define directly
-slice : ∀ {n : ℕ} → idx (S n) → matrix[ n , S n ] ℕ → matrix[ n , n ] ℕ
-slice i m = {!!}
+slice : ∀ {n : ℕ} → idx (S n) → matrix[ S n , S n ] ℕ → matrix[ n , n ] ℕ
+slice Z (x ∷ m) = map[vec] (λ x₁ → {!   !}) {!   !}
+slice (S i) m = map[vec] {!   !} {!   !}
 
 pred : ∀ (n : ℕ) → idx n → ℕ
 pred Z ()
@@ -58,10 +59,10 @@ remove-idx (S i) (x ∷ xs) = x ∷ remove-idx i xs
 
 mutual
   det-elem : ∀ {n : ℕ} → idx (S (S n)) → vec[ S (S n) ] ℕ → matrix[ S n , S (S n) ] ℕ → ℕ
-  det-elem i xs xss = xs #[ i ] × (det (slice i xss))
+  det-elem i xs xss = xs #[ i ] × (det ({!slice i xss  !}))
 
   -- vec-iter is now called vlfold, part of the state will be a
   -- boolean, is it plus or minus
   det : ∀ {n : ℕ} → matrix[ S n , S n ] ℕ → ℕ
   det {0} [ [ x ] ] = x
-  det {S n} (xs ∷ xss) = {!   !}
+  det {S n} (xs ∷ xss) = det {!   !}
