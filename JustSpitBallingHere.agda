@@ -65,4 +65,4 @@ mutual
   -- boolean, is it plus or minus
   det : ∀ {n : ℕ} → matrix[ S n , S n ] ℕ → ℕ
   det {0} [ [ x ] ] = x
-  det {S n} (xs ∷ xss) = det ((n ∷ {!   !}) ∷ {!   !})
+  det {S n} (xs ∷ xss) = det (vlfold {!   !} ((n ∷ {!   !}) ∷ {!   !}) (λ x x₁ x₂ → (n ∷ {!   !}) ∷ {!   !}))
